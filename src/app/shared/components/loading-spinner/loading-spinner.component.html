@@ -1,0 +1,12 @@
+<div
+  class="spinner-wrapper"
+  [class.full-page]="fullPage"
+  role="status"
+  aria-live="polite">
+  <mat-spinner
+    [diameter]="diameter"
+    color="primary"
+    aria-hidden="true">
+  </mat-spinner>
+  <span class="spinner-message" *ngIf="message">{{ message }}</span>
+</div>

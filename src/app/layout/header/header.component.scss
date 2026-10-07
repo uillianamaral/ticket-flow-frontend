@@ -1,0 +1,118 @@
+@use '../../../styles/variables' as vars;
+
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: vars.$color-bg-surface;
+  color: vars.$color-text-main;
+  border-bottom: 1px solid vars.$color-border;
+  padding: 0 vars.$spacing-md;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: vars.$shadow-sm;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-sm;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-xs;
+  user-select: none;
+
+  .brand-icon {
+    font-size: 26px;
+    color: vars.$color-primary-light;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: vars.$color-primary;
+
+    .brand-highlight {
+      color: vars.$color-primary-light;
+    }
+  }
+
+  .brand-badge {
+    font-size: 10px;
+    font-weight: 700;
+    background-color: vars.$color-primary-subtle;
+    color: vars.$color-primary;
+    padding: 2px 6px;
+    border-radius: vars.$radius-full;
+  }
+}
+
+.user-profile-btn {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-xs;
+  padding: 4px 8px;
+  border-radius: vars.$radius-full;
+  transition: background-color vars.$transition-fast;
+
+  &:hover {
+    background-color: vars.$color-bg-subtle;
+  }
+}
+
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, vars.$color-primary, vars.$color-primary-light);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.user-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.2;
+
+  .user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: vars.$color-text-main;
+  }
+
+  .user-role-badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: vars.$color-text-light;
+    text-transform: uppercase;
+  }
+}
+
+.arrow-icon {
+  font-size: 18px;
+  color: vars.$color-text-light;
+}
+
+.menu-header {
+  padding: vars.$spacing-sm vars.$spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  .role-caption {
+    font-size: 11px;
+    color: vars.$color-text-light;
+  }
+}

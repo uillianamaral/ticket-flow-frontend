@@ -1,0 +1,41 @@
+@use '../../../../styles/variables' as vars;
+
+.confirm-dialog-container {
+  padding: vars.$spacing-sm;
+}
+
+.dialog-title {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-sm;
+  font-size: 18px;
+  font-weight: 600;
+  color: vars.$color-text-main;
+  margin: 0;
+
+  .dialog-icon {
+    font-size: 24px;
+    color: vars.$color-primary-light;
+
+    &.destructive {
+      color: vars.$sla-danger;
+    }
+  }
+}
+
+.dialog-content {
+  padding: vars.$spacing-md 0 !important;
+  color: vars.$color-text-muted;
+  font-size: 14px;
+  line-height: 1.5;
+
+  p {
+    margin: 0;
+  }
+}
+
+.dialog-actions {
+  display: flex;
+  gap: vars.$spacing-xs;
+  padding-top: vars.$spacing-md !important;
+}

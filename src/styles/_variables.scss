@@ -1,0 +1,88 @@
+// ==============================================================================
+// TicketFlow — Variáveis e Tokens de Design System (_variables.scss)
+// ==============================================================================
+
+// 1. Paleta de Cores Primária e Neutra (Tailwind/Radix inspired, WCAG 2.2 AA)
+$color-primary: #1e3a8a;          // Azul Marinho Corporativo
+$color-primary-light: #3b82f6;    // Azul Vibrante
+$color-primary-dark: #172554;     // Azul Noturno Profundo
+$color-primary-subtle: #eff6ff;   // Fundo Azul Claro Suave
+
+$color-secondary: #0f766e;        // Azul Petróleo / Teal
+$color-secondary-light: #14b8a6;
+$color-secondary-subtle: #f0fdfa;
+
+// Superfícies e Fundos
+$color-bg-app: #f8fafc;           // Cinza Claro Neutro
+$color-bg-surface: #ffffff;       // Branco Puro
+$color-bg-subtle: #f1f5f9;        // Cinza Suave para Cards/Tabelas
+$color-border: #e2e8f0;           // Borda Padrão
+$color-border-subtle: #cbd5e1;
+
+// Textos
+$color-text-main: #0f172a;        // Quase Preto (Contraste 13:1 com branco)
+$color-text-muted: #475569;       // Cinza Escuro Leitura (Contraste 5.5:1)
+$color-text-light: #64748b;       // Legendas Secundárias (Contraste 4.6:1)
+
+// 2. Status do Ciclo de Vida do Chamado
+$status-aberto: #0284c7;
+$status-aberto-bg: #e0f2fe;
+
+$status-em-atendimento: #7c3aed;
+$status-em-atendimento-bg: #ede9fe;
+
+$status-aguardando: #d97706;
+$status-aguardando-bg: #fef3c7;
+
+$status-resolvido: #059669;
+$status-resolvido-bg: #d1fae5;
+
+$status-encerrado: #475569;
+$status-encerrado-bg: #f1f5f9;
+
+// 3. Indicadores de SLA em Horas Corridas
+$sla-ok: #10b981;                 // Verde: > 50% de prazo restante
+$sla-ok-bg: #ecfdf5;
+
+$sla-warning: #f59e0b;            // Amarelo: < 25% de prazo restante
+$sla-warning-bg: #fffbeb;
+
+$sla-danger: #ef4444;             // Vermelho: Estourado / Atrasado
+$sla-danger-bg: #fef2f2;
+
+// 4. Notas Internas Confidenciais (ADR-004)
+$internal-note-bg: #fffbeb;
+$internal-note-border: #fcd34d;
+$internal-note-text: #92400e;
+$internal-note-badge: #b45309;
+
+// 5. Espaçamentos
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// 6. Raios de Borda (Border Radius)
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 16px;
+$radius-full: 9999px;
+
+// 7. Sombras (Box Shadow)
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+$shadow-card: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+
+// 8. Transições
+$transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+$transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+// 9. Breakpoints Responsivos
+$breakpoint-sm: 600px;
+$breakpoint-md: 960px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1920px;

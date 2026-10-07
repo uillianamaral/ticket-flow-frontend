@@ -1,0 +1,34 @@
+<nav class="sidebar-nav" aria-label="Navegação Principal do Sistema">
+  <div class="sidebar-header">
+    <span class="sidebar-title">Menu Principal</span>
+  </div>
+
+  <mat-nav-list class="nav-list">
+    <ng-container *ngFor="let item of navItems">
+      <a
+        mat-list-item
+        *ngIf="isItemVisible(item)"
+        [routerLink]="item.route"
+        routerLinkActive="active-nav-item"
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+        (click)="onItemClick(item.route)"
+        class="nav-link-item"
+        [attr.aria-label]="item.label">
+        <span matListItemIcon class="material-symbols-outlined nav-icon">{{ item.icon }}</span>
+        <span matListItemTitle class="nav-label">{{ item.label }}</span>
+      </a>
+    </ng-container>
+  </mat-nav-list>
+
+  <mat-divider></mat-divider>
+
+  <div class="sidebar-footer">
+    <div class="help-box">
+      <span class="material-symbols-outlined help-icon">support_agent</span>
+      <div class="help-text">
+        <strong>Suporte TicketFlow</strong>
+        <span>Central de Dúvidas</span>
+      </div>
+    </div>
+  </div>
+</nav>

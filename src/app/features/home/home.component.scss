@@ -1,0 +1,113 @@
+@use '../../../styles/variables' as vars;
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-lg;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: vars.$spacing-md;
+
+  .header-intro {
+    .page-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: vars.$color-primary-dark;
+      margin: 0 0 vars.$spacing-xxs 0;
+      letter-spacing: -0.5px;
+    }
+
+    .page-subtitle {
+      font-size: 14px;
+      color: vars.$color-text-muted;
+      margin: 0;
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    gap: vars.$spacing-sm;
+  }
+}
+
+.actions-strip {
+  display: flex;
+  gap: vars.$spacing-sm;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: vars.$spacing-md;
+
+  .metric-card {
+    border-radius: vars.$radius-md;
+    transition: transform vars.$transition-fast, box-shadow vars.$transition-fast;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: vars.$shadow-md;
+    }
+
+    mat-card-header {
+      display: flex;
+      align-items: center;
+      gap: vars.$spacing-sm;
+      margin-bottom: vars.$spacing-sm;
+    }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: vars.$radius-sm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &.blue {
+        background-color: vars.$status-aberto-bg;
+        color: vars.$status-aberto;
+      }
+
+      &.green {
+        background-color: vars.$sla-ok-bg;
+        color: vars.$sla-ok;
+      }
+
+      &.orange {
+        background-color: vars.$sla-warning-bg;
+        color: vars.$sla-warning;
+      }
+
+      &.red {
+        background-color: vars.$sla-danger-bg;
+        color: vars.$sla-danger;
+      }
+    }
+
+    .metric-value {
+      font-size: 28px;
+      font-weight: 700;
+      color: vars.$color-text-main;
+      margin: vars.$spacing-xs 0;
+    }
+  }
+}
+
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$spacing-sm;
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: vars.$color-text-main;
+    margin: vars.$spacing-sm 0 0 0;
+  }
+}

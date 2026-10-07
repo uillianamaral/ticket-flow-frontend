@@ -1,0 +1,50 @@
+@use '../../../../styles/variables' as vars;
+
+.empty-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: vars.$spacing-xxl vars.$spacing-lg;
+  background-color: vars.$color-bg-surface;
+  border: 1px dashed vars.$color-border-subtle;
+  border-radius: vars.$radius-md;
+  margin: vars.$spacing-md 0;
+}
+
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: vars.$color-primary-subtle;
+  color: vars.$color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: vars.$spacing-md;
+
+  .empty-icon {
+    font-size: 32px;
+  }
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: vars.$color-text-main;
+  margin: 0 0 vars.$spacing-xs 0;
+}
+
+.empty-description {
+  font-size: 14px;
+  color: vars.$color-text-muted;
+  max-width: 440px;
+  line-height: 1.5;
+  margin: 0 0 vars.$spacing-lg 0;
+}
+
+.empty-actions {
+  display: flex;
+  gap: vars.$spacing-sm;
+}

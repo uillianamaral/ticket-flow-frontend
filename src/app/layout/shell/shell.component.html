@@ -1,0 +1,36 @@
+<!-- Skip Link Acessível (WCAG 2.2 AA) -->
+<a href="#main-content" class="skip-to-content">Pular para o conteúdo principal</a>
+
+<div class="shell-wrapper">
+  <!-- Toolbar Superior -->
+  <app-header
+    [userName]="userName"
+    [userRole]="userRole"
+    [isMobile]="isMobile"
+    (toggleSidebar)="toggleSidenav()"
+    (logout)="onLogout()">
+  </app-header>
+
+  <!-- Container Responsivo com Sidenav -->
+  <mat-sidenav-container class="sidenav-container" autosize>
+    <mat-sidenav
+      #sidenav
+      [mode]="isMobile ? 'over' : 'side'"
+      [opened]="isSidenavOpen"
+      (closed)="isSidenavOpen = false"
+      class="app-sidenav"
+      role="navigation">
+      <app-sidebar
+        [userRole]="userRole"
+        (navigate)="onNavigate()">
+      </app-sidebar>
+    </mat-sidenav>
+
+    <!-- Conteúdo Principal -->
+    <mat-sidenav-content class="main-content-area" id="main-content" role="main">
+      <div class="page-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

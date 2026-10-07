@@ -1,0 +1,62 @@
+<mat-toolbar class="header-toolbar" role="banner">
+  <div class="header-left">
+    <button
+      mat-icon-button
+      type="button"
+      class="menu-toggle-btn"
+      aria-label="Alternar menu de navegação"
+      (click)="onToggle()">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+
+    <div class="brand">
+      <span class="brand-icon material-symbols-outlined" aria-hidden="true">confirmation_number</span>
+      <span class="brand-name">Ticket<span class="brand-highlight">Flow</span></span>
+      <span class="brand-badge">v1.0</span>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <!-- Notificações -->
+    <button
+      mat-icon-button
+      type="button"
+      class="notifications-btn"
+      [attr.aria-label]="'Notificações: ' + unreadNotifications + ' não lidas'"
+      [matBadge]="unreadNotifications"
+      matBadgeColor="warn"
+      [matBadgeHidden]="unreadNotifications === 0">
+      <span class="material-symbols-outlined">notifications</span>
+    </button>
+
+    <!-- Menu do Usuário -->
+    <button
+      mat-button
+      type="button"
+      [matMenuTriggerFor]="userMenu"
+      class="user-profile-btn"
+      aria-haspopup="menu"
+      [attr.aria-label]="'Menu de usuário de ' + userName">
+      <div class="user-avatar" aria-hidden="true">
+        {{ userName.charAt(0).toUpperCase() }}
+      </div>
+      <div class="user-meta" *ngIf="!isMobile">
+        <span class="user-name">{{ userName }}</span>
+        <span class="user-role-badge">{{ userRole }}</span>
+      </div>
+      <span class="material-symbols-outlined arrow-icon" aria-hidden="true">expand_more</span>
+    </button>
+
+    <mat-menu #userMenu="matMenu" xPosition="before" class="user-dropdown-menu">
+      <div class="menu-header">
+        <strong>{{ userName }}</strong>
+        <span class="role-caption">{{ userRole }}</span>
+      </div>
+      <mat-divider></mat-divider>
+      <button mat-menu-item type="button" (click)="onLogout()">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Sair do Sistema</span>
+      </button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

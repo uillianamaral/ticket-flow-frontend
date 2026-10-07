@@ -1,0 +1,142 @@
+<div class="home-page">
+  <!-- Cabeçalho de Boas-Vindas -->
+  <header class="page-header">
+    <div class="header-intro">
+      <h1 class="page-title">Painel de Atendimento — TicketFlow</h1>
+      <p class="page-subtitle">
+        Fundação e arquitetura base do sistema operacional (Milestone 1 — Angular 22 + Material M3 + SCSS).
+      </p>
+    </div>
+    <div class="header-actions">
+      <button
+        mat-stroked-button
+        type="button"
+        (click)="openConfirmModal()">
+        <span class="material-symbols-outlined">help</span>
+        Testar Modal
+      </button>
+      <button
+        mat-flat-button
+        color="primary"
+        type="button"
+        (click)="toggleLoading()">
+        <span class="material-symbols-outlined">refresh</span>
+        {{ showDemoLoading ? 'Ocultar Loading' : 'Simular Loading' }}
+      </button>
+    </div>
+  </header>
+
+  <!-- Simulação de Loading Spinner Compartilhado -->
+  <div *ngIf="showDemoLoading" class="demo-section">
+    <app-loading-spinner
+      message="Carregando fila de atendimento do PostgreSQL..."
+      [diameter]="40">
+    </app-loading-spinner>
+  </div>
+
+  <!-- Botão de simular erro -->
+  <div class="actions-strip">
+    <button
+      mat-stroked-button
+      color="warn"
+      type="button"
+      (click)="toggleError()">
+      <span class="material-symbols-outlined">report</span>
+      {{ showDemoError ? 'Ocultar Banner de Erro' : 'Simular Alerta de Erro' }}
+    </button>
+  </div>
+
+  <!-- Simulação de Error Banner Compartilhado -->
+  <app-error-banner
+    *ngIf="showDemoError"
+    title="Falha simulada na comunicação com a API"
+    message="Esta mensagem é renderizada pelo componente reutilizável ErrorBanner com role='alert' para leitores de tela."
+    [retryable]="true"
+    retryLabel="Tentar reconectar"
+    (retry)="toggleError()">
+  </app-error-banner>
+
+  <!-- Métricas Rápidas / Cards Operacionais -->
+  <section class="metrics-grid" aria-label="Indicadores operacionais rápidos">
+    <mat-card class="metric-card" appearance="outlined">
+      <mat-card-header>
+        <div class="card-icon blue" aria-hidden="true">
+          <span class="material-symbols-outlined">inbox</span>
+        </div>
+        <mat-card-title>Chamados Abertos</mat-card-title>
+        <mat-card-subtitle>Aguardando atendimento</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">12</div>
+        <span class="badge-status status-aberto">Fila Ativa</span>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card" appearance="outlined">
+      <mat-card-header>
+        <div class="card-icon green" aria-hidden="true">
+          <span class="material-symbols-outlined">timer</span>
+        </div>
+        <mat-card-title>SLA no Prazo</mat-card-title>
+        <mat-card-subtitle>Horas corridas (24/7)</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">94.8%</div>
+        <span class="badge-sla sla-ok">🟢 Dentro da meta</span>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card" appearance="outlined">
+      <mat-card-header>
+        <div class="card-icon orange" aria-hidden="true">
+          <span class="material-symbols-outlined">warning</span>
+        </div>
+        <mat-card-title>Próximos do Limite</mat-card-title>
+        <mat-card-subtitle>&lt; 25% tempo restante</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">3</div>
+        <span class="badge-sla sla-warning">🟡 Atenção</span>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="metric-card" appearance="outlined">
+      <mat-card-header>
+        <div class="card-icon red" aria-hidden="true">
+          <span class="material-symbols-outlined">alarm_off</span>
+        </div>
+        <mat-card-title>SLA Estourado</mat-card-title>
+        <mat-card-subtitle>Atraso operacional</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="metric-value">0</div>
+        <span class="badge-sla sla-danger">🔴 0 atrasados</span>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <!-- Demonstração de Nota Interna Confidencial (ADR-004) -->
+  <section class="demo-section">
+    <div class="internal-note-container" role="region" aria-label="Nota interna confidencial">
+      <div class="internal-note-header">
+        <span class="material-symbols-outlined">lock</span>
+        <span>NOTA INTERNA (ADR-004) — Visível exclusivamente para atendentes e administradores</span>
+      </div>
+      <p>
+        O componente de notas internas possui isolamento estrito no backend e estilização diferenciada em amarelo suave para evitar vazamento acidental de informações confidenciais ao solicitante.
+      </p>
+    </div>
+  </section>
+
+  <!-- Demonstração de Empty State Compartilhado -->
+  <section class="demo-section">
+    <h2 class="section-title">Demonstração de Estado Vazio (EmptyStateComponent)</h2>
+    <app-empty-state
+      icon="task_alt"
+      title="Nenhum chamado pendente de validação"
+      description="Todos os chamados atribuídos à sua equipe já foram analisados e respondidos. Novas solicitações aparecerão aqui automaticamente."
+      actionLabel="Atualizar Fila"
+      (action)="openConfirmModal()">
+    </app-empty-state>
+  </section>
+</div>

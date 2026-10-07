@@ -1,0 +1,47 @@
+@use '../../../../styles/variables' as vars;
+
+.error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: vars.$spacing-md;
+  background-color: vars.$sla-danger-bg;
+  border: 1px solid #fecaca;
+  border-left: 5px solid vars.$sla-danger;
+  border-radius: vars.$radius-sm;
+  padding: vars.$spacing-md;
+  margin: vars.$spacing-md 0;
+}
+
+.error-icon-wrapper {
+  color: vars.$sla-danger;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .error-icon {
+    font-size: 24px;
+  }
+}
+
+.error-content {
+  flex: 1;
+
+  .error-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #991b1b;
+    margin-bottom: 2px;
+  }
+
+  .error-message {
+    font-size: 13px;
+    color: #b91c1c;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+.error-actions {
+  align-self: center;
+}

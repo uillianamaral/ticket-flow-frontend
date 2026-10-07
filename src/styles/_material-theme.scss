@@ -1,0 +1,23 @@
+// ==============================================================================
+// TicketFlow — Tema Angular Material M3 (_material-theme.scss)
+// ==============================================================================
+
+@use '@angular/material' as mat;
+
+$ticketflow-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  typography: (
+    plain-family: 'Inter, Roboto, sans-serif',
+    brand-family: 'Inter, Roboto, sans-serif',
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+@include mat.core();
+@include mat.all-component-themes($ticketflow-theme);
